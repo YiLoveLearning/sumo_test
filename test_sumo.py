@@ -102,8 +102,6 @@ def test():
 
     model_no = 4
     star_time = datetime.datetime(2024, 4, 8, 1)
-
-
     start_time = time.time()
     model = f"model/sumoproject4.3.{model_no}.dll"
     init_states = f'state/state{model_no}_{star_time.strftime("%Y-%m-%d-%H-00")}.xml'
@@ -120,8 +118,9 @@ def test():
     ds.sumo.datacomm_callback = data_Callback
     results = []
     time_points = []  
+    #设置时间的步长 step=1,输入时间间隔为2h
     step = 1
-
+    #控制输入的时间频率
     for i in range(0, len(all_cleaning_data),step):
         # 4. 设定时间段内运行sumo进行模拟, 获取输出和loss
         inf_args = all_cleaning_data.iloc[i]
