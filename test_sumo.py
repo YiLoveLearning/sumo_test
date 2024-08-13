@@ -13,7 +13,6 @@ import dynamita.tool as dtool
 from loguru import logger 
 from pathlib import Path 
 import matplotlib.pyplot as plt 
-import os
 import numpy as np
 def msg_Callback(job, msg):
     if ds.sumo.isSimFinishedMsg(msg):  # 如果模拟完成，保存状态文件
